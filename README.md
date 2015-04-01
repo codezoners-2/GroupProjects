@@ -48,7 +48,7 @@ Present as a team, rather than as individuals, but each team member should be ab
 * React.js - once more, this could be use in order to dynamically update the DOM without having to reload the page, as demonstrated during the [React.js](https://github.com/codezoners-2/React) week.
 * D3.js - a very powerful framework for doing visualizations with Javascript. See [examples](http://d3js.org/). We haven’t seen this yet, but we will work with it soon, so you can still think about where this kind of technology might be used. 
 
-### Project ideas
+## Project ideas
 
 #### Visualization
 
