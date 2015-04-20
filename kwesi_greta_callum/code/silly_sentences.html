@@ -29,6 +29,14 @@
   </head>
 
   <body>
+      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -84,15 +92,21 @@
             <h3>Popular Sentences</h3>
               <form class="form-inline" action="/index" method="POST">
                 <input type="hidden" class="form-control" id="clear" name="clear" value="clear">
-                <button type="submit" class="btn btn-default">Clear</button>
+                <button type="submit" class="btn btn-primary">Clear</button>
               </form>
+            </br>
             {% if posts %}
               {% for sentence in posts %}
-                <p>{{ sentence }}</p>
+              <div class="panel panel-info">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">{{sentence}}</h3>
+                  </div>
+          <button type="button" class="glyphicon glyphicon-arrow-up">{{buttonValue}}</button>
+          <button type="button" class="glyphicon glyphicon-arrow-down">{{butonValue}}</button>
+            </div>
               {% endfor %}
             {% endif %}
           </div>
-        </div>
 
       </div>
 
