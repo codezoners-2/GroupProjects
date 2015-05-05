@@ -1,0 +1,14 @@
+body {
+  padding-top: 50px;
+}
+form.add-word {
+  padding-top: 10px;
+}
+.starter-template {
+  padding: 40px 15px;
+}
+.sentence {
+  padding: 2px;
+  background-color: RoyalBlue;
+  color: white;
+}
