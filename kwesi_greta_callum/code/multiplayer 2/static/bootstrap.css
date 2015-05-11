@@ -8,6 +8,14 @@ body {
   text-align: center;
 }
 
+.block-inline {
+  display: inline-block;
+}
+
+.submit-sentence {
+  text-align: right;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
