@@ -1,0 +1,63 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url(http://www.warrenphotographic.co.uk/photography/bigs/03632-Masai-Giraffe.jpg);
+}
+
+.col-xs-12 {
+  text-align: center;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+form.add-word {
+  padding-top: 10px;
+}
+.starter-template {
+  padding: 40px 15px;
+}
+.sentence {
+  padding: 2px;
+  color: #2265AA;
+}
+.lobbychat {
+  text-align: center;
+}
+
+.float {
+  float: left;
+}
