@@ -59,7 +59,7 @@ d3.json('/posts', function(error, json) {
 
       .enter().append("p")
       .text(function(d) { return json[d].sentence.join(' '); })
-      .attr("class", function(d) { return "panel panel-info"; })
+      .attr("class", function(d) { return "panel panel-default"; })
       .style("color", "#2265AA")
 
 
@@ -81,7 +81,8 @@ d3.json('/posts', function(error, json) {
                       .attr("value", function(d) { return "upvote"+d; })
                   insideDiv.append("button")
                       .attr("type", function(d) { return "submit"; })
-                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-up"; })
+                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-up btn btn-default btn-xs"; })
+                      .text("\u20090")
               });
           });
         insideP.append("form")
@@ -100,7 +101,8 @@ d3.json('/posts', function(error, json) {
                       .attr("value", function(d) { return "downvote"+d; })
                   insideDiv.append("button")
                       .attr("type", function(d) { return "submit"; })
-                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-down"; })
+                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-down btn btn-default btn-xs"; })
+                      .text("\u20090")
 
               });
           });

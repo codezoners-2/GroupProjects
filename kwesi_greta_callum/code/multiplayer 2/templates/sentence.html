@@ -107,11 +107,15 @@
                   </form>
               </div>
             </div>
-
-            <marquee behavior="alternate"><h2 style="color:#2265AA">User Chat</h2></marquee>
-
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            <div id="chat">
+            </div>
             <div class ="well">
-                <div style="color:#2265AA; font-weight:bold" class="panel panel-info" id="log"></div>
+                <div style="color:#2265AA; font-weight:bold" class="panel panel-default" id="log"></div>
                 <form id="broadcast" class="form-inline" method="POST" action='#'>
                     <div class="lobbychat input-group">
                         <input class="form-control" type="text" name="broadcast_data" id="broadcast_data" placeholder="Chat Here">
@@ -137,7 +141,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script>
+    <script src="../static/chat.js"></script>
+
+      <script>
 d3.json('/posts', function(error, json) {
     if (error) {
         return console.warn(error)
@@ -147,7 +153,7 @@ d3.json('/posts', function(error, json) {
 
       .enter().append("p")
       .text(function(d) { return json[d].sentence.join(' '); })
-      .attr("class", function(d) { return "panel panel-info"; })
+      .attr("class", function(d) { return "panel panel-default"; })
       .style("color", "#2265AA")
 
 
@@ -169,7 +175,8 @@ d3.json('/posts', function(error, json) {
                       .attr("value", function(d) { return "upvote"+d; })
                   insideDiv.append("button")
                       .attr("type", function(d) { return "submit"; })
-                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-up"; })
+                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-up btn btn-default btn-xs"; })
+                      .text("\u20090")
               });
           });
         insideP.append("form")
@@ -188,7 +195,8 @@ d3.json('/posts', function(error, json) {
                       .attr("value", function(d) { return "downvote"+d; })
                   insideDiv.append("button")
                       .attr("type", function(d) { return "submit"; })
-                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-down"; })
+                      .attr("class", function(d) { return "glyphicon glyphicon-thumbs-down btn btn-default btn-xs"; })
+                      .text("\u20090")
 
               });
           });
