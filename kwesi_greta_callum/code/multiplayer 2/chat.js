@@ -1,5 +1,5 @@
-var width = 600,
-    height = 150;
+var width = 635,
+    height = 100;
 
 var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 10}; }),
     root = nodes[0],
@@ -17,7 +17,7 @@ var force = d3.layout.force()
 force.start();
 
 var svg = d3.select("div#chat").append("svg")
-    .style("background","#C5DCEC")
+    .style("background","#F2F2F2")
     .attr("width", width)
     .attr("height", height);
 
@@ -37,16 +37,14 @@ force.on("tick", function(e) {
   svg.selectAll("circle")
       .attr("cx", function(d) { return d.x; })
       .attr("cy", function(d) { return d.y; });
- 
+
      svg.append('text')
-    .text("USERS CHAT")
-    .style("fill", "white")
-    .style("font-weight", "bold")
+    .text("User Chat")
+    .style("fill", "black")
     .style("font-size","45px")
-    .style("opacity", 0.15)
     .attr('x', 250)
     .attr('y', 75)
-   
+
 });
 
 
