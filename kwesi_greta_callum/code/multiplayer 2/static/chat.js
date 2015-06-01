@@ -18,8 +18,8 @@ force.start();
 
 var svg = d3.select("div#chat").append("svg")
     .style("background","#F2F2F2")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width": "100%")
+    .attr("height", "100%");
 
 svg.selectAll("circle")
     .data(nodes.slice(1))
