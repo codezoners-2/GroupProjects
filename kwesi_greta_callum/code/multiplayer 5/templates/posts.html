@@ -26,9 +26,10 @@
             <div class="col-xs-7">
                 <div class="well">
 				<div class="form-group">
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Join <span class="glyphicon glyphicon-user"></span></button>
                     <h1>Live Sentences</h1>
-                    <div class="panel panel-default">
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Join <span class="glyphicon glyphicon-user"></span></button>
+                 </div>   
+					<div class="panel panel-default">
                         {% for id, data in sentences.iteritems() %}
                             <p>
                                 {% set s = data["sentence"] %}
