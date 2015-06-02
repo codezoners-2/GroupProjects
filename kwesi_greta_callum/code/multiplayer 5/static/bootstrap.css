@@ -154,3 +154,5 @@ form.add-word {
   box-shadow: none;
   margin-bottom: 4px;
 }
+@media (max-width: @screen-xs-max) { 
+min-width: 400px;}
