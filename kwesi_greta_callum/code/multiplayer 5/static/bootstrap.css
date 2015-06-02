@@ -12,17 +12,6 @@ html, body {
   min-width: 400px;
 }
 
-@media (min-width: @screen-sm-min) {
-.block-inline 
-  display: normal;
-
-.col-xs-12 {
-  width:400px;
-
-.col-xs-7 
-  width:400px;
-
-}
 p {
   color: #2265AA;
 }
