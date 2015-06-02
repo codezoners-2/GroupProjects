@@ -19,7 +19,9 @@ html, body {
 .col-xs-12 {
   width:400px;
 }
-
+.col-xs-7 {
+  text-align: center;
+}
 }
 p {
   color: #2265AA;
