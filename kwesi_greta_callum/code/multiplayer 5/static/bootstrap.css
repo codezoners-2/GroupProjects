@@ -14,7 +14,7 @@ html, body {
 
 @media (min-width: @screen-sm-min) {
 .block-inline {
-  display: block;
+  display: normal;
 }
 
 }
