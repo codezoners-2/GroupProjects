@@ -155,4 +155,4 @@ form.add-word {
   margin-bottom: 4px;
 }
 @media (max-width: @screen-xs-max) { 
-min-width: 400px;}
+min-width: 600px;}
