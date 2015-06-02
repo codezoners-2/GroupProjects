@@ -7,6 +7,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+  min-width: 360px;
+}
+
 p {
   color: #2265AA;
 }
@@ -154,5 +158,4 @@ form.add-word {
   box-shadow: none;
   margin-bottom: 4px;
 }
-@media (max-width: @screen-xs-max) { 
-min-width: 600px;}
+
