@@ -13,15 +13,15 @@ html, body {
 }
 
 @media (min-width: @screen-sm-min) {
-.block-inline {
+.block-inline 
   display: normal;
-}
+
 .col-xs-12 {
   width:400px;
-}
-.col-xs-7 {
+
+.col-xs-7 
   width:400px;
-}
+
 }
 p {
   color: #2265AA;
