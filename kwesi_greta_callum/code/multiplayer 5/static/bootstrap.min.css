@@ -1958,6 +1958,18 @@ table td[class*="col-"], table th[class*="col-"] {
     min-height: 0.01%;
     overflow-x: auto;
 }
+
+@media screen and (max-width: 400px) {
+
+.col-xs-7{
+    width:100%;
+}
+.col-xs-5{
+    width:100%;
+}
+.col-xs-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-xs-5, .col-lg-6, .col-xs-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;}
+}
 @media screen and (max-width: 767px) {
 .table-responsive {
     border: 1px solid #ddd;
@@ -1968,6 +1980,7 @@ table td[class*="col-"], table th[class*="col-"] {
 .table-responsive > .table {
     margin-bottom: 0;
 }
+
 .table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td {
     white-space: nowrap;
 }
