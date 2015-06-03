@@ -11,7 +11,9 @@ html, body {
   width: auto !important;
   min-width: 400px;
 }
-
+.col-xs-7 {
+    width: 58.3333%;
+}
 p {
   color: #2265AA;
 }
