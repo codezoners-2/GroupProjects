@@ -1,0 +1,10 @@
+img0,static/data/numbers/zero.jpg
+img1,static/data/numbers/one.jpg
+img2,static/data/numbers/two.jpg
+img3,static/data/numbers/three.jpg
+img4,static/data/numbers/four.jpg
+img5,static/data/numbers/five.jpg
+img6,static/data/numbers/six.jpg
+img7,static/data/numbers/seven.jpg
+img8,static/data/numbers/eight.jpg
+img9,static/data/numbers/nine.jpg

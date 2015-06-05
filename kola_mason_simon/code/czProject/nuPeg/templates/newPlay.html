@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    
+    <title>NumericPeg System</title>
+    
+    <!-- Core P5.JS libraries --
+    <script language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.13/p5.min.js"></script> -->
+    <script language="javascript" type="text/javascript" src="../p5.min.js"></script> 
+
+    <!-- Extra p5.JS libraries --
+    <script language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.13/addons/p5.dom.js"></script>
+    <script language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.13/addons/p5.sound.js"></script> -->
+    <script language="javascript" src="../addons/p5.dom.js"></script>
+    <script language="javascript" src="../addons/p5.sound.js"></script>
+
+    <!-- Main P5.JS sketch -->
+    <script language="javascript" type="text/javascript" src="playSketch.js"></script>
+    
+    <!-- Bootstrap core CSS --
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="../bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Optional Bootstrap theme --
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="../bootstrap-3.3.4-dist/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link href="static/css/starter-template.css" rel="stylesheet">
+    
+    <!-- Bootstrap JS requires JQuery to be loaded first --
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="../jquery-2.1.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript - Placed at the end of the document so the pages load faster --
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+    <script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <script src="../bootstrap-3.3.4-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+
+</head>
+
+<body>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">Numeric Peg System Drill</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Play</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Players<span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Player 1</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Player 2</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Player 3</a></li>
+                     </ul>
+                </li>
+                <!-- <li><a href="#">About</a></li> -->
+              </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+    </div>
+    
+    <div class="starter-template" class="container theme-showcase" role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"><h3><b>DECODE the number</b></h3></div>
+                <div class="col-lg-10">
+                    <div class="panel-body">
+                        <div id='myCanvasContainer'></div><!--random picture go there-->
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div><!--end Row 2 -->
+            
+            <div class="row"> <!--start row 3 - commentaries -->
+                <div class="col-md-4">
+					<form action="" method="post"><!--form and submit button for 1 digit number 0-9-->
+					Decode  the 1 Digit Number from the picture?<br>
+					<br>
+					<input type="number" name="number" min="0" max="9">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - left pane -->
+                </div>
+                
+                <div class="col-md-4">
+					<form action="" method="post"><!--form 2 digit number 0-9-->
+					Decode  the 2 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="20">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--main commentaries -->
+                </div>
+                
+                <div class="col-md-4">
+					<form action="" method="post"><!--form 3 digit number 0-9-->
+					Decode  the 3 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+			</div>
+
+			<div class="row"> <!--start row 3 - commentaries -->
+				<div class="col-md-4">
+					<form action="" method="post"><!--form 4 digit number 0-9-->
+					Decode  the 4 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="9999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+				
+				<div class="col-md-4">
+					<form action="" method="post"><!--form 5 digit number 0-9-->
+					Decode  the 5 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="99999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+				
+				<div class="col-md-4">
+					<form action="" method="post"><!--form 6 digit number 0-9-->
+					Decode  the 6 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="999999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+			</div>	
+			
+			<div class="row"> <!--start row 3 - commentaries -->
+				<div class="col-md-4">
+					<form action="" method="post"><!--form 7 digit number 0-9-->
+					Decode  the 7 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="9999999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+				
+				<div class="col-md-4">
+					<form action="" method="post"><!--form 8 digit number 0-9-->
+					Decode  the 8 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="99999999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+				
+				<div class="col-md-4">
+					<form action="" method="post"><!--form 9 digit number 0-9-->
+					Decode  the 9 Digit Number from the picture?<br>
+					<input type="number" name="number" min="0" max="999999999">
+					<input type="submit" value="Submit"><br>
+					</form>
+                    <!--empty - right pane -->
+                </div>
+			</div>	
+           
+        </div>
+    </div><!-- /.container closed-->
+	
+	
+
+
+</body>
+</html>

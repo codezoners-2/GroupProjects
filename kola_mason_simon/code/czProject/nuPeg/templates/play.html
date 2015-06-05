@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="">
+        
+        <title>Nupeg System</title>
+        
+        <!-- Core P5.JS libraries --
+        <script language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.13/p5.min.js"></script> -->
+        <script language="javascript" type="text/javascript" src="../p5.min.js"></script> 
+
+        <!-- Extra p5.JS libraries --
+        <script language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.13/addons/p5.dom.js"></script>
+        <script language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.13/addons/p5.sound.js"></script> -->
+        <script language="javascript" src="../addons/p5.dom.js"></script>
+        <script language="javascript" src="../addons/p5.sound.js"></script>
+
+        <!-- Main P5.JS sketch -->
+        <script language="javascript" type="text/javascript" src="playSketch.js"></script>
+        
+        <!-- Bootstrap core CSS --
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Optional Bootstrap theme --
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+        <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+        <!-- Custom styles for this template -->
+        <link href="static/css/starter-template.css" rel="stylesheet">
+        
+        <!-- Bootstrap JS requires JQuery to be loaded first --
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+        <script src="static/js/jquery.min.js"></script>
+        <!-- Bootstrap core JavaScript - Placed at the end of the document so the pages load faster --
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+        <script src="static/js/bootstrap.min.js"></script>
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --
+        <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script> -->
+        <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+
+    </head>
+
+    <body>
+        
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="home">Nupeg System Drill</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="play">Play</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Players<span class="caret"></span></a>
+                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Player 1</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Player 2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Player 3</a></li>
+                         </ul>
+                    </li>
+                    <!-- <li><a href="#">About</a></li> -->
+                  </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container -->
+        </div>
+        
+        <div class="starter-template" class="container theme-showcase" role="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                    </div>
+                    <div class="col-lg-8">
+                        <!-- <div class="form-group" id="loginForm">
+                            <form role="form" ACTION="#" METHOD="POST">
+                                <label for="username">Username:</label>
+                                <input TYPE="TEXT" class="" name="username" placeholder="your name please">
+                                <label for="password">Password:</label>
+                                <input TYPE="PASSWORD" class="" name="password" placeholder="your password" name="password">
+                                <button type="submit" class="btn btn-default" name="submit">Submit</span></button>
+                            </form>
+                        </div> -->
+                        <div id="formContainer"></div>
+                    </div>
+                    <div class="col-lg-2">
+                        <u><h4><span id="userContainer"></span></h4></u>
+                    </div>
+                </div>
+                <hr>
+                <div class="row"> <!-- row 2-->
+                    <div class="col-lg-2">
+                        <span id="scoreSumContainer"></span>
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-0.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-1.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-2.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-3.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-4.jpg" width="85%" height="80%">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="panel-body">
+                            <h3><span id="levelContainer"></span></h3>
+                            <div>
+                                <form action="playResult" method="post" name="level1"><!--form and submit button for 1 digit number 0-9-->
+                                    <h3>Decode the Number from the image provided?</h3><br>
+                                    <br>
+                                    <u>Level 1</u> &nbsp; Question {{q}} of 5 <br>
+                                    <br>
+                                    <img src="static/data/numbers/{{ x }}.jpg" name="image"> &nbsp;
+                                    <input type="number" name="number" min="0" max="9" required="True">
+                                    <input type="submit" value="Submit"><br>
+                                    <input type="hidden" value="{{ x }}" name="imageText">
+                                </form>
+                            </div>
+                            <h4><span id="instructContainer">
+
+                            </span></h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-5.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-6.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-7.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-8.jpg" width="85%" height="80%">
+                        <img src="static/data/numLogos/Memphis-Numbers-Series-9.jpg" width="85%" height="80%">
+                    </div>
+                </div><!--end row 2 -->
+                
+                <div class="row"> <!--start row 3 - commentaries -->
+                    <div class="col-md-4">
+                        <!--empty - left pane -->
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <!--main commentaries -->
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <!--empty - right pane -->
+                    </div>
+                </div>
+               
+            </div>
+        </div><!-- /.container closed-->
+
+    </body>
+</html>
