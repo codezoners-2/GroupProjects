@@ -10,11 +10,11 @@ class Counter(persistent.Persistent):
 def update(root):
     #IF TWEET CONTAINS *PARTY*
         #INCREMENT PARTY
-    root.Parties["Conservatives"].increment()
+    root.BBCNews["Conservatives"].increment()
     transaction.commit()
-    print root.Parties["Conservatives"].count
+    print root.BBCNews["Conservatives"].count
 
-db = ZODB.DB("twitterElection.fs") #create db with specified name
+db = ZODB.DB("tweets.fs") #create db with specified name
 connection = db.open() #open db
 root = connection.root() #connect to root
 
