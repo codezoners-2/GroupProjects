@@ -1,27 +1,53 @@
-import tweepy
-import re
+import threading
+from flask import Flask, render_template, jsonify
+import json
+import os, random
+import logic
+import datetime
+import time
 
-consumer_key = "cp2HpHsZOtWK6cXKxzmFgI2bC"
-consumer_secret = "WXvj6eKXP26gsHtdcAjH71JNNfvUHo2ilUiU6SzgWKLtfikJGz"
-access_token = "3245138284-bNfY3h3WTZyUwpnLi4gPzYBkmImqr1a2e03DhI8"
-access_token_secret = "NaeVMi8W0qByjg0qav2Z9MltTKUTRokhZNOOozrx39ULT"
+#thread stuff
+POOL_TIME = 10 #Seconds
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+#DB Stuff
+start_date = datetime.datetime(1980, 11, 5, 11, 26, 15, 37496)
+app = Flask(__name__)
+tweets = {'data': []}
+past_query_dates = {}
+last_user_fetched = ""
 
-api = tweepy.API(auth)
-keywords = ["General Election","GE2015","Election"]
+@app.route('/')
+def index():
+    return render_template('index.html')
 
+def fetch():
+    for u in users:
+            global tweets
+            tweets['data'] = logic.get_all_tweets(u)
+            #resp = jsonify({"data": logic.get_all_tweets(user)})
+            resp = json.dumps({"data": 'hello'})
+            global past_query_dates
+            if u not in past_query_dates.keys(): past_query_dates[u] = start_date
+            global last_user_fetched
+            last_user_fetched = u
+            print "updating DB entry for: {}".format(u)
+    yourThread = threading.Timer(POOL_TIME, fetch, ())
+    yourThread.start()
 
-#Search for keywords in tweets (up to week in past)
-results = api.search(q=keywords)
+yourThread = threading.Thread(name='fetcher', target=fetch)
+yourThread.start()
 
-for result in results:
-    print result.text
-
+@app.route('/counter/<keyword>')
+def getcounts(keyword):    
+    global past_query_dates
+    if past_query_dates.get(last_user_fetched, None): #if you have searched BBC
+        date = past_query_dates[last_user_fetched].get(keyword, start_date) #get date for spec keywrd else set to start_date
+    else: #if you have not searched BBC before
+        past_query_dates[last_user_fetched] = {} #create an empty dictionary to store keywords: dates
+        date = start_date # and set the date to start date
     
-##Search all followed users and return tweets
-#public_tweets = api.home_timeline()
-#for tweet in public_tweets:
-#    print tweet.text
+    results = logic.get_num_of_refs(tweets['data'], date, keyword)
+    past_query_dates[last_user_fetched][keyword] = results["lastDate"]
+    return jsonify(results)
 
+app.run(host='0.0.0.0', port=8080, debug=True)
