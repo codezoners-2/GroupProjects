@@ -1,0 +1,68 @@
+[
+    {
+        "year": 1941,
+        "month": [
+            "jan" : {
+                "tmax": val,
+                "tmin": val,
+                "af": val,
+                "rain": val,
+                "sun": val
+            },
+            "feb" : {
+                "tmax": val,
+                "tmin": val,
+                "af": val,
+                "rain": val,
+                "sun": val
+            },
+            .
+            .
+            .
+        ]
+    },
+    {
+        "year": 1942,
+        "month": [
+            "jan" : {
+                "tmax": val,
+                "tmin": val,
+                "af": val,
+                "rain": val,
+                "sun": val
+            },
+            "feb" : {
+                "tmax": val,
+                "tmin": val,
+                "af": val,
+                "rain": val,
+                "sun": val
+            },
+            .
+            .
+            .
+        ]
+    },
+    {
+        "year": 1943,
+        "month": [
+            "jan" : {
+                "tmax": val,
+                "tmin": val,
+                "af": val,
+                "rain": val,
+                "sun": val
+            },
+            "feb" : {
+                "tmax": val,
+                "tmin": val,
+                "af": val,
+                "rain": val,
+                "sun": val
+            },
+            .
+            .
+            .
+        ]
+    },
+]
