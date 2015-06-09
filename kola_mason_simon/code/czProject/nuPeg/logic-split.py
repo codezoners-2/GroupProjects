@@ -1,12 +1,13 @@
 import sys
 import functools
 
-def filesToDict(listOfFiles):
-    '''
-    >>> sorted(filesToDict(['test/image0Info.txt','test/image1Info.txt']).items())
-    [('test/image0Info.txt', ['one', 'two']), ('test/image1Info.txt', ['three', 'four', 'three'])]
 
-    '''
+def filesToDict(listOfFiles):
+    """
+    >>> sorted(filesToDict(['static/test/image0Info.txt','static/test/image1Info.txt']).items())
+    [('static/test/image0Info.txt', ['one', 'two']), ('static/test/image1Info.txt', ['three', 'four', 'three'])]
+
+    """
     return {f: open(f).read().splitlines() for f in listOfFiles}
 
 

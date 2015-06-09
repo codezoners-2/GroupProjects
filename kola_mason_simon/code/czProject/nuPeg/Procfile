@@ -1,0 +1,1 @@
+web: gunicorn nupegcz:app --log-file=-
